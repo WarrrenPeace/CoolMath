@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3e6b26915a70b64c84ba103acefe465, type: 3}
-  m_Name: Gym Memebership
+  m_Name: Taco
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  catagory: 5
-  value: 20
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  catagory: 0
+  value: 4
+  sprite: {fileID: 2335742030248273555, guid: c9e09a377af1b6b419c4bc98e419b56b, type: 3}
