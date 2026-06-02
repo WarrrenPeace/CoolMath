@@ -18,16 +18,19 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         AS = GetComponent<AudioSource>();
+        AS.volume = PlayerPrefs.GetFloat("MusicVolume");
     }
     public void MuffleMusic(bool state)
     {
+        float currentVolume = PlayerPrefs.GetFloat("MusicVolume");
+        float muffleVolume = currentVolume/2;
         if(!state)
         {
-            AS.volume = 1;
+            AS.volume = currentVolume;
         }
         else
         {
-            AS.volume = 0.4f;
+            AS.volume = muffleVolume;
         }
     }
 }

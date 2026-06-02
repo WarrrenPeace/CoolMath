@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wallet
   - Draggable
+  - KillZone
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Item
   - 
   - 
   - 
@@ -45,6 +46,9 @@ TagManager:
     locked: 0
   - name: Game
     uniqueID: 2443910297
+    locked: 0
+  - name: WorldCanvas
+    uniqueID: 3231543329
     locked: 0
   m_RenderingLayers:
   - Default

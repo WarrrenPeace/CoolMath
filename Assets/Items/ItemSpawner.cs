@@ -4,8 +4,13 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour
 {
     [SerializeField] GameObject itemPrefab;
+    [SerializeField] GameObject itemValueUIPrefab;
+    [SerializeField] Transform worldCanvas;
+    [SerializeField] private float spawnDelay = 0.5f;
+    [SerializeField] private float spawnFrequency = 0.5f;
     [SerializeField] private float spawnRadius;
     [SerializeField] private bool canSpawnItem;
+    [SerializeField] float minForce = 0.1f, MaxForce = 0.25f;
     [SerializeField] Item[] Foods;
     [SerializeField] Item[] Utilities;
     [SerializeField] Item[] Fun;
@@ -24,7 +29,7 @@ public class ItemSpawner : MonoBehaviour
     }
     void StartSpawnSequence()
     {
-        InvokeRepeating("SpawnItem",0.5f,0.5f);
+        InvokeRepeating("SpawnItem",spawnDelay,spawnFrequency);
     }
 
     void SpawnItem()
@@ -86,7 +91,10 @@ public class ItemSpawner : MonoBehaviour
         {
             BudgetItem spawnedBudgetItem = Instantiate(itemPrefab,GetRandomPointAroundScreen(spawnRadius),quaternion.identity).GetComponent<BudgetItem>();
             spawnedBudgetItem.itemObject = item;
-            spawnedBudgetItem.startForce = UnityEngine.Random.Range(0.15f, 0.51f);
+            spawnedBudgetItem.startForce = UnityEngine.Random.Range(minForce, MaxForce);
+
+            ItemValueUI itemvalueUI = Instantiate(itemValueUIPrefab,spawnedBudgetItem.transform.position, quaternion.identity,worldCanvas).GetComponent<ItemValueUI>();
+            itemvalueUI.SetUpUIObject(spawnedBudgetItem.transform,spawnedBudgetItem.itemObject.value);
         }
         else
         {
