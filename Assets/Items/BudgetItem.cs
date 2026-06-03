@@ -5,6 +5,7 @@ public class BudgetItem : MonoBehaviour
     Rigidbody2D RB;
     public Item itemObject;
     public float startForce = 1;
+    [SerializeField] private Vector3 attractor;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +17,7 @@ public class BudgetItem : MonoBehaviour
     }
     void PushToWallet()
     {
-        RB.AddForce(Vector3.zero - transform.position * startForce,ForceMode2D.Impulse);
+        RB.AddForce(attractor - transform.position * startForce,ForceMode2D.Impulse);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -25,6 +26,7 @@ public class BudgetItem : MonoBehaviour
             //Add Item to budget
 
             //Remove money from wallet
+            BudgetManager.instance.BuyItem(itemObject);
 
             //Destroy
             Destroy(gameObject);

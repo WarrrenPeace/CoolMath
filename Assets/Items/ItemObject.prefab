@@ -108,7 +108,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 5
   m_LinearDamping: 0.25
-  m_AngularDamping: 1
+  m_AngularDamping: 0.25
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &5939726854473861613
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   itemObject: {fileID: 0}
   startForce: 1
+  attractor: {x: 0.75, y: -0.25, z: 0}
 --- !u!114 &528295853513495530
 MonoBehaviour:
   m_ObjectHideFlags: 0

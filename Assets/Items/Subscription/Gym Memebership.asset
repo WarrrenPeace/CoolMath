@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gym Memebership
   m_EditorClassIdentifier: Assembly-CSharp::Item
   catagory: 5
-  value: 19.99
-  sprite: {fileID: 2335742030248273555, guid: c9e09a377af1b6b419c4bc98e419b56b, type: 3}
+  value: 29
+  sprite: {fileID: -3311235388509609527, guid: 66b0300f9a77bab4c87b6d0633f9fd74, type: 3}

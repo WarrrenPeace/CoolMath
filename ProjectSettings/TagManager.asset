@@ -50,5 +50,8 @@ TagManager:
   - name: WorldCanvas
     uniqueID: 3231543329
     locked: 0
+  - name: UI
+    uniqueID: 3901028563
+    locked: 0
   m_RenderingLayers:
   - Default

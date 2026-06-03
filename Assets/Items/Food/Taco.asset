@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Taco
   m_EditorClassIdentifier: Assembly-CSharp::Item
   catagory: 0
-  value: 4
+  value: 2
   sprite: {fileID: 2335742030248273555, guid: c9e09a377af1b6b419c4bc98e419b56b, type: 3}
