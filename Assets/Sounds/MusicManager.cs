@@ -6,7 +6,6 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance;
     [SerializeField] private AudioSource AS;
-    [SerializeField] private AudioClip track;
     void Awake()
     {
         if(instance != null)
@@ -31,6 +30,17 @@ public class MusicManager : MonoBehaviour
         else
         {
             AS.volume = muffleVolume;
+        }
+    }
+    public void PitchMusic(bool state)
+    {
+        if(!state)
+        {
+            AS.pitch = 1;
+        }
+        else
+        {
+            AS.pitch = 0.9f;
         }
     }
 }

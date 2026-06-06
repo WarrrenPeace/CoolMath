@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   itemObject: {fileID: 0}
   startForce: 1
-  attractor: {x: 0.75, y: -0.25, z: 0}
+  attractor: {x: 1, y: -0.25, z: 0}
 --- !u!114 &528295853513495530
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,13 +5,13 @@ public class Item : ScriptableObject
 {
     public enum Catagory
     {
-        Food, //Food sprites
+        Food, //Food
         Utilities, //Water, electric, gas, car,
         Fun, //
-        Clothing,
-        Travel,
-        Memberships,
-        Pets,
+        Clothing, //all kinds of clothes
+        Travel, //Filling Gas, Insurance
+        Memberships, //subscriptions, gym membership
+        Pets, 
         Misc
 
     }
