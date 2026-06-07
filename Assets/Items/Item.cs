@@ -18,5 +18,4 @@ public class Item : ScriptableObject
     public Catagory catagory;
     public float value; //How much item is worth
     [SerializeField] public Sprite sprite;
-    
 }

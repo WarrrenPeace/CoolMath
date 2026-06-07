@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
     public static TimeManager instance;
     public static event Action CountDownOver;
     [SerializeField] private Slider monthVisualSlider;
-    [SerializeField] private float timeGoal = 120;
+    [SerializeField] private float timeGoal = 180;
     [SerializeField] private float timeRemaining;
 
 
@@ -30,7 +30,10 @@ public class TimeManager : MonoBehaviour
     }
     void Start()
     {
-        timeRemaining = timeGoal;
+        //timeRemaining = timeGoal;
+        monthVisualSlider.maxValue = timeGoal;
+
+        isClockStarted = true;
     }
     void Update()
     {
@@ -40,6 +43,8 @@ public class TimeManager : MonoBehaviour
             {
                 if(!CountUp) {TickDownClock();}
                 else {TickUpClock();}
+
+                monthVisualSlider.value = timeRemaining;
             }
         }
         
@@ -57,6 +62,7 @@ public class TimeManager : MonoBehaviour
         else
         {
             timeRemaining -= 1 * Time.deltaTime;
+
         }
     }
     void TickUpClock()

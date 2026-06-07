@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c9e09a377af1b6b419c4bc98e419b56b
+guid: 470b2c802e547df43acbae97b9a36aa6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2335742030248273555
-    second: Tacos_0
+      213: 5190299140411600157
+    second: GameBackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tacos_0
+      name: GameBackground_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 12
+        width: 800
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 396e5ef40093a6020800000000000000
-      internalID: 2335742030248273555
+      spriteID: d1daf3e9195a70840800000000000000
+      internalID: 5190299140411600157
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tacos_0: 2335742030248273555
+      GameBackground_0: 5190299140411600157
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

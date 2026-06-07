@@ -17,6 +17,11 @@ public class BudgetManager : MonoBehaviour
     [SerializeField] Catagory PetsCat;
     [SerializeField] Catagory MiscCat;
 
+    private int itemsDiscarded;
+
+    [Header("AudioFX")]private AudioSource AS;
+    [SerializeField] private AudioClip buy, discard;
+
     
 
     void Awake()
@@ -32,6 +37,8 @@ public class BudgetManager : MonoBehaviour
     }
     void Start()
     {
+        AS = GetComponent<AudioSource>();
+
         FoodCat.Setup(100);
         UtilitiesCat.Setup(100);
         FunCat.Setup(100);
@@ -45,6 +52,7 @@ public class BudgetManager : MonoBehaviour
     {
         if(moneyBalance - (int)item.value >= 0) //If moneyBalance would still be positive, then substract it
         {
+            AS.PlayOneShot(buy, PlayerPrefs.GetFloat("FXVolume"));
             moneyBalance -= (int)item.value; //Might allow floats?
         }
         else //If not then subtract but end the game
@@ -115,5 +123,14 @@ public class BudgetManager : MonoBehaviour
         {
             moneyBalanceGUI.color = Color.white;
         }
+    }
+    public void OnBudgetSurpassed() //A budget has been surpassed... end the game
+    {
+        GameState.instance.EndGame();
+    }
+    public void ItemDiscarded()
+    {
+        itemsDiscarded += 1;
+        AS.PlayOneShot(discard,PlayerPrefs.GetFloat("FXVolume"));
     }
 }

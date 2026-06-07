@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
+    public static ItemSpawner instance;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] GameObject itemValueUIPrefab;
     [SerializeField] Transform worldCanvas;
@@ -20,9 +21,17 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] Item[] Pets;
     [SerializeField] Item[] Misc;
 
-    
-
-
+    void Awake()
+    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
         StartSpawnSequence();
@@ -30,6 +39,23 @@ public class ItemSpawner : MonoBehaviour
     void StartSpawnSequence()
     {
         InvokeRepeating("SpawnItem",spawnDelay,spawnFrequency);
+    }
+    public void ShutDown()
+    {
+        EndSpawning();
+        KillAllObjects();
+    }
+    void EndSpawning()
+    {
+        CancelInvoke("SpawnItem");
+    }
+    void KillAllObjects()
+    {
+        GameObject[] killThese =  GameObject.FindGameObjectsWithTag("Draggable");
+        foreach (GameObject item in killThese)
+        {
+            Destroy(item);
+        }
     }
 
     void SpawnItem()

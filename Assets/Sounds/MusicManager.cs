@@ -5,7 +5,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance;
-    [SerializeField] private AudioSource AS;
+    private AudioSource AS;
     void Awake()
     {
         if(instance != null)
@@ -40,7 +40,7 @@ public class MusicManager : MonoBehaviour
         }
         else
         {
-            AS.pitch = 0.9f;
+            AS.pitch = 0.8f;
         }
     }
 }

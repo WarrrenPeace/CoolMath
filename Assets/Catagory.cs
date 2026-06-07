@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Catagory : MonoBehaviour
 {
     public int amount, amountMIN, amountMAX;
+    [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextMeshProUGUI budgetAmount;
     [SerializeField] private Slider progressbar;
     private Animator AM;
@@ -12,6 +13,7 @@ public class Catagory : MonoBehaviour
     void Start()
     {
         AM = GetComponent<Animator>();
+        title.text = name;
     }
     public void Setup(int maxValue)
     {
@@ -32,8 +34,9 @@ public class Catagory : MonoBehaviour
 
         if(amount >= amountMAX)
         {
-            Debug.Log(name + " Budget has be reached!");
-            budgetAmount.color = Color.red;
+            BudgetManager.instance.OnBudgetSurpassed();
+            Debug.Log(name + " Budget has been reached!");
+            //budgetAmount.color = Color.red;
             progressbar.fillRect.GetComponent<Image>().color = Color.darkRed;
         }
         AM.SetTrigger("Stretch");
