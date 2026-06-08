@@ -3,14 +3,18 @@ using UnityEngine;
 public class BudgetItem : MonoBehaviour
 {
     Rigidbody2D RB;
+    Animator AM;
     public Item itemObject;
     [SerializeField] private CatagoryColor colors;
     public float startForce = 1;
     [SerializeField] private Vector3 attractor;
+
+    private bool isDead = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+        AM = GetComponent<Animator>();
 
         if(itemObject)
         {
@@ -73,15 +77,18 @@ public class BudgetItem : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Wallet")
+        if(other.tag == "Wallet" && !isDead)
         {
-            //Add Item to budget
-
-            //Remove money from wallet
+            isDead = true;
+            //Remove money from wallet, add to budget
             BudgetManager.instance.BuyItem(itemObject);
 
+            //Animate
+            GetComponent<CircleCollider2D>().enabled = false;
+            AM.SetTrigger("Bought");
+
             //Destroy
-            Destroy(gameObject);
+            Destroy(gameObject,0.5f);
         }
     }
     void OnTriggerExit2D(Collider2D other)

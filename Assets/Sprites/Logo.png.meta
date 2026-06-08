@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1eb80f83004ac3a498765c6faf5a812e
+guid: 17412f776b970814b867cd2cf2296598
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3483784977498851588
-    second: BackgroundTRIM_0
+      213: 1404028623067837608
+    second: Logo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackgroundTRIM_0
+      name: Logo_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 600
+        width: 136
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf6b656550c17afc0800000000000000
-      internalID: -3483784977498851588
+      spriteID: 8a47074089c1c7310800000000000000
+      internalID: 1404028623067837608
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackgroundTRIM_0: -3483784977498851588
+      Logo_0: 1404028623067837608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

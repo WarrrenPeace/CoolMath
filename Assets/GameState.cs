@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -57,5 +58,10 @@ public class GameState : MonoBehaviour
             ItemSpawner.instance.ShutDown();
         }
         
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }
